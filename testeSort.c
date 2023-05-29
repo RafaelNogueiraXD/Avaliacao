@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "ordenacao.h"
+#include "bibliotecas/ordenacao.h"
 
 int main(){
     srand(time(NULL));
     int i, j;
     int min_size = 10;
     int max_size = 100;
-    int increment = 10;
+    int increment = 1;
     for (i = min_size; i <= max_size; i += increment) {
         int vetor[i];
         int vetor2[i];
@@ -28,7 +28,7 @@ int main(){
         // mergeSort(vetor,0, i,&compare0);
         // int compare0 =0;
         // heapSort(vetor,i,&compare0);
-        printf("tamanho: %d  select: %d, bb: %d , insertion: %d\n",i,selectionSort(vetor,i), bubbleSort(vetor2, i), insertionSort(vetor3,i));
+        printf("tamanho: %d  radix: %d, bb: %d \n",i, radixSort(vetor,i),bubbleSort(vetor2,i));
         // Registrar o número de comparações no arquivo de texto
         // fprintf(arquivo, "%d, %d\n", i, comparisons);
     }

@@ -220,3 +220,64 @@ void heapSort(int arr[], int n, int *comparisons) {
         heapify(arr, i, 0, comparisons);
     }
 }
+// Função para encontrar o valor máximo no vetor
+int encontrarMaximo(int vetor[], int tamanho) {
+    int max = vetor[0];
+    for (int i = 1; i < tamanho; i++) {
+        if (vetor[i] > max) {
+            max = vetor[i];
+        }
+    }
+    return max;
+}
+
+// Função de ordenação Radix Sort
+int radixSort(int vetor[], int tamanho) {
+    int max = encontrarMaximo(vetor, tamanho);  // Encontra o valor máximo no vetor
+    int digitos = 0;  // Número de dígitos do valor máximo
+    int base = 1;  // Base para obter cada dígito
+
+    // Loop para encontrar o número de dígitos do valor máximo
+    while (max > 0) {
+        digitos++;
+        max /= 10;
+    }
+
+    int comp = 0;  // Variável para contar o número de comparações
+    int* aux = (int*)malloc(tamanho * sizeof(int));  // Vetor auxiliar para armazenar os valores intermediários durante a ordenação
+
+    // Loop para ordenar o vetor por cada dígito, começando pelo dígito menos significativo
+    for (int d = 0; d < digitos; d++) {
+        int contador[10] = {0};  // Vetor de contagem para contar o número de elementos em cada dígito
+
+        // Contagem do número de elementos em cada dígito
+        for (int i = 0; i < tamanho; i++) {
+            int digito = (vetor[i] / base) % 10;
+            contador[digito]++;
+        }
+
+        // Atualização do vetor de contagem para ter a posição correta de cada elemento no vetor auxiliar
+        for (int i = 1; i < 10; i++) {
+            contador[i] += contador[i - 1];
+        }
+
+        // Construção do vetor auxiliar a partir dos elementos do vetor original
+        for (int i = tamanho - 1; i >= 0; i--) {
+            int digito = (vetor[i] / base) % 10;
+            aux[contador[digito] - 1] = vetor[i];
+            contador[digito]--;
+            comp++;  // Incremento do número de comparações
+        }
+
+        // Atualização do vetor original com os elementos ordenados do vetor auxiliar
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = aux[i];
+        }
+
+        base *= 10;  // Atualização da base para o próximo dígito
+    }
+
+    free(aux);  // Libera a memória alocada para o vetor auxiliar
+
+    return comp;  // Retorna o número de comparações feitas
+}

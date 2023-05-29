@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "../ordenacao.h"
-void comparaG1eG2(int min_size,int max_size, int increment){
+#include "ordenacao.h"
+void comparaG1eG2(int min_size,int max_size, int increment, char *caminho){
     int i, j;
     int aux;
-    FILE *arquivo = fopen("txt/compG1eG2.txt", "a");
+    FILE *arquivo = fopen(caminho, "a");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo!\n");
         return;
@@ -32,10 +32,10 @@ void comparaG1eG2(int min_size,int max_size, int increment){
     }
     fclose(arquivo);
 }
-void comparaG1(int min_size,int max_size, int increment){
+void comparaG1(int min_size,int max_size, int increment, char *caminho){
     int i, j;
     int aux;
-    FILE *arquivo = fopen("txt/comparaG1.txt", "a");
+    FILE *arquivo = fopen(caminho, "a");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo!\n");
         return ;
@@ -55,10 +55,10 @@ void comparaG1(int min_size,int max_size, int increment){
     }
     fclose(arquivo);
 }
-void comparaG2(int min_size,int max_size, int increment){
+void comparaG2(int min_size,int max_size, int increment,char *caminho){
     int i, j;
     int aux;
-    FILE *arquivo = fopen("txt/comparaG2.txt", "a");
+    FILE *arquivo = fopen(caminho, "a");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo!\n");
         return ;

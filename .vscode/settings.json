@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "ordenacao.h": "c"
+        "ordenacao.h": "c",
+        "todos.h": "c"
     }
 }
