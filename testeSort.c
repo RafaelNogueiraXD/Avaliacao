@@ -5,30 +5,31 @@
 int main(){
     srand(time(NULL));
     int i, j;
-    int min_size = 10;
-    int max_size = 100;
+    FILE *arquivo;
+    arquivo = fopen("../txt/radix2-g.txt","a");
+    int min_size = 1;
+    int max_size = 10000;
     int increment = 1;
     for (i = min_size; i <= max_size; i += increment) {
         int vetor[i];
         int vetor2[i];
         int vetor3[i];
+        int vetor4[i];
         // Preencher vetor aleatório
         int cont;
         for (j = 0; j < i; j++) {
             cont = rand() % 10000;
-            vetor2[j]= cont;
             vetor[j] = cont;
+            vetor2[j]= cont;
             vetor3[j] = cont;
+            vetor4[j] = cont;
         }
         
         // Ordenar o vetor e obter o número de comparações 
-        // int compare0 =0;
-        // quickSort(vetor,0, i,&compare0);
-        // int compare0 =0;
-        // mergeSort(vetor,0, i,&compare0);
-        // int compare0 =0;
-        // heapSort(vetor,i,&compare0);
-        printf("tamanho: %d  radix: %d, bb: %d \n",i, radixSort(vetor,i),bubbleSort(vetor2,i));
+        int compare0 = bubbleSort(vetor,i);
+        int compare2 = selectionSort(vetor,i);
+        int compare1 = insertionSort(vetor,i);
+        fprintf(arquivo,"%d %d %d\n",i,radixSort(vetor,i),(compare0+compare1+compare2)/3);
         // Registrar o número de comparações no arquivo de texto
         // fprintf(arquivo, "%d, %d\n", i, comparisons);
     }
