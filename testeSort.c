@@ -6,7 +6,7 @@ int main(){
     srand(time(NULL));
     int i, j;
     FILE *arquivo;
-    arquivo = fopen("../txt/radix2-g.txt","a");
+    arquivo = fopen("../txt/radixt-p.txt","a");
     int min_size = 1;
     int max_size = 10000;
     int increment = 1;
