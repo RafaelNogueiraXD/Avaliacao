@@ -1,0 +1,21 @@
+Nome: Rafael Nogueira Rodrigues;  Matricula: 2210100445
+O algoritimo desse trabalho foi divido em algumas partes
+    "main.c" - é o arquivo principal que importa as bibliotecas com as funções de ordenação
+    "inicial.sh" - executa a main e cria todas as situações envolvendo Grupo 1 e Grupo 2
+    "criaImagem.sh" - gerará imagens conforme o que está na pasta txt, detalhe, é importante mudar coisas dentro desse arquivo caso necessário.
+    "txt" - cada arquivo representa uma simulação, através deles será gerado os gráficos
+    "imagens" - nesta pasta esta todas imagens geradas no windows
+    "imagens2" - nesta pasta esta todas imagens gerados no Linux
+    "bibliotecas"
+        "ordenacao.c" - está todas as funções de ordenação
+        "todos.h" - uni as funções de ordenação para criação das simiulações
+    
+IMPORTANTE: ao executar o programa tem 3 opções conforme pode ser observado no "inicial.sh"
+    precisa de 2 parâmetros, o primeiro é qual grupo deseja realiza, ou seja:
+         se por "g1" irá para o grupo O(n²)
+         se por "g2" irá para o grupo O(n xln(x))
+         se por "todos" irá fazer a media de g1 e g2
+    Segundo argumento é tamanho das comparações
+        "p" irá ter inicio de tamanho 1 até o tamanho 1000 incrementando de 1 em 1
+        "m" irá ter inicio de tamanho 1 até o tamanho 5000 incrementando de 1 em 1
+        "g" irá ter inicio de tamanho 1 até o tamanho 10000 incrementando de 1 em 1
