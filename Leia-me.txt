@@ -1,4 +1,5 @@
 Nome: Rafael Nogueira Rodrigues;  Matricula: 2210100445
+Link do github: https://github.com/RafaelNogueiraXD/Avaliacao
 O algoritimo desse trabalho foi divido em algumas partes
     "main.c" - é o arquivo principal que importa as bibliotecas com as funções de ordenação
     "inicial.sh" - executa a main e cria todas as situações envolvendo Grupo 1 e Grupo 2
