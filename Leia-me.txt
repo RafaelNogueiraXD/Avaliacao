@@ -12,7 +12,8 @@ O algoritimo desse trabalho foi divido em algumas partes
         "todos.h" - uni as funções de ordenação para criação das simiulações
     
 IMPORTANTE: ao executar o programa tem 3 opções conforme pode ser observado no "inicial.sh"
-    precisa de 2 parâmetros, o primeiro é qual grupo deseja realiza, ou seja:
+    precisa de 2 parâmetros:
+    O primeiro é qual grupo deseja realiza, ou seja:
          se por "g1" irá para o grupo O(n²)
          se por "g2" irá para o grupo O(n xln(x))
          se por "todos" irá fazer a media de g1 e g2
@@ -20,3 +21,6 @@ IMPORTANTE: ao executar o programa tem 3 opções conforme pode ser observado no
         "p" irá ter inicio de tamanho 1 até o tamanho 1000 incrementando de 1 em 1
         "m" irá ter inicio de tamanho 1 até o tamanho 5000 incrementando de 1 em 1
         "g" irá ter inicio de tamanho 1 até o tamanho 10000 incrementando de 1 em 1
+
+Motivo da entrega Atrasada: A versão que eu entreguei dentro do prazo havia um erro pois contava o numero de swaps e não de comparações.
+                            Então depois de conversar com o professor, resolvi inverter isso.

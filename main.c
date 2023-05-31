@@ -1,6 +1,7 @@
 #include "bibliotecas/todos.h"
 #define tamanhoNome 100
 int main(int argc, char *argv[]) {
+    printf("\nIniciando geracao de dados \n");
     char caminho[tamanhoNome]="txt/";
     char argumento[10];
     //salva o argumento
