@@ -37,7 +37,7 @@ void comparaG1eG2(int min_size, int max_size, int increment, const char* caminho
         memcpy(vetor6, vetor, sizeof(int) * i);
         heapSort(vetor6, i, &compare2);
         
-        // Registrar o número de comparações no arquivo de texto
+        
         int comparacao_media = (compare0 + compare1 + compare2) / 3;
         int comparacao_media_sorts = (compar1 + compar2 + compar3) / 3;
         fprintf(arquivo, "%d %d %d\n", i, comparacao_media, comparacao_media_sorts);
@@ -58,7 +58,7 @@ void comparaG1(int min_size,int max_size, int increment, char *caminho){
         int *vetor = (int*) malloc(sizeof(int) *i);
         int *vetor2 = (int*) malloc(sizeof(int) *i);
         int *vetor3 = (int*) malloc(sizeof(int) *i);
-        // insereAleatorios(vetor, i, 0 , 100000);
+        
         insereAleatorios(vetor, i, 0, 100000);
         
         memcpy(vetor2, vetor, sizeof(int) * i);
@@ -66,8 +66,8 @@ void comparaG1(int min_size,int max_size, int increment, char *caminho){
 
         int compar1 = selectionSort(vetor, i);
         int compar2 = bubbleSort(vetor2, i); 
-        // printf("\n mostrando vet 3:\n");
-        // mostraVetor(vetor3,i);
+        
+        
         int compar3 = insertionSort(vetor3, i); 
         fprintf(arquivo, "%d %d %d %d\n",i , compar1,compar2,compar3);
         free(vetor);
@@ -99,7 +99,7 @@ void comparaG2(int min_size,int max_size, int increment,char *caminho){
         mergeSort(vetor2, 0, i, &compare1);
         int compare2 = 0; 
         heapSort(vetor3, i , &compare2);
-        // Registrar o número de comparações no arquivo de texto
+        
         fprintf(arquivo, "%d %d %d %d\n",i , compare0,compare1,compare2);
     }
     fclose(arquivo);
